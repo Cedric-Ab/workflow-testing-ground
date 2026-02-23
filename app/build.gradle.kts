@@ -6,8 +6,10 @@
  */
 
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
+    java
     application
+    checkstyle
+    pmd
 }
 
 repositories {
@@ -34,7 +36,29 @@ application {
     mainClass = "org.example.App"
 }
 
+checkstyle {
+    toolVersion = "10.12.4"
+}
+
+pmd {
+    toolVersion = "6.55.0"
+}
+
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
+}
+
+tasks.withType<Checkstyle> {
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+tasks.withType<Pmd> {
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }
