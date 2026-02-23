@@ -1,4 +1,4 @@
-name: basic_workflow.yml
+name: basic workflow
 on:
   push:
 
