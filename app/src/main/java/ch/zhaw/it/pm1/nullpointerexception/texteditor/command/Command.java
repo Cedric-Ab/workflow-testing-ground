@@ -20,15 +20,20 @@ import java.util.stream.Collectors;
  * Also provides some methods as utility.
  */
 public abstract class Command {
+    // CHECKSTYLE:OFF VisibilityModifier
     protected final Logger logger = Logger.getLogger(this.getClass().getName());
     protected final CommandArgument<?> argument;
     protected final Text text;
     protected final TextFormatter textFormatter;
+    // CHECKSTYLE:ON VisibilityModifier
 
     /**
      * Creates a new Command instance.
      *
-     * @param arguments the additional input given upon calling of the command
+     * @param arguments       the additional input given upon calling of the command
+     * @param commandArgument the command argument
+     * @param text            the text to be edited
+     * @param textFormatter   the text formatter to be used for formatting the text
      * @throws InvalidInputException if the additional input is invalid
      */
     public Command(String arguments, CommandArgument<?> commandArgument, Text text, TextFormatter textFormatter) throws InvalidInputException {

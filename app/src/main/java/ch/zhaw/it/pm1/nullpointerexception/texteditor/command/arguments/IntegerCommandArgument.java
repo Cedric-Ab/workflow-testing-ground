@@ -5,7 +5,7 @@ import ch.zhaw.it.pm1.nullpointerexception.texteditor.InvalidInputException;
 public class IntegerCommandArgument implements CommandArgument<Integer> {
     private final int minValue;
     private final int maxValue;
-    protected int parsedValue;
+    private int parsedValue;
 
     public IntegerCommandArgument(int minValue, int maxValue) {
         this.minValue = minValue;

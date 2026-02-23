@@ -1,6 +1,10 @@
 package ch.zhaw.it.pm1.nullpointerexception.texteditor.command;
 
-import ch.zhaw.it.pm1.nullpointerexception.texteditor.*;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.Indexer;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.InvalidInputException;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.SubsequentAction;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.Text;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.TextFormatter;
 import ch.zhaw.it.pm1.nullpointerexception.texteditor.command.arguments.NoCommandArgument;
 import ch.zhaw.it.pm1.nullpointerexception.texteditor.command.furtherinput.FurtherInput;
 

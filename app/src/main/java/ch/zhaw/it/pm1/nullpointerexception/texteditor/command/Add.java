@@ -1,6 +1,11 @@
 package ch.zhaw.it.pm1.nullpointerexception.texteditor.command;
 
-import ch.zhaw.it.pm1.nullpointerexception.texteditor.*;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.InvalidInputException;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.Paragraph;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.StringValidator;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.SubsequentAction;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.Text;
+import ch.zhaw.it.pm1.nullpointerexception.texteditor.TextFormatter;
 import ch.zhaw.it.pm1.nullpointerexception.texteditor.command.arguments.CommandArgumentWithDefault;
 import ch.zhaw.it.pm1.nullpointerexception.texteditor.command.arguments.ParagraphIndexCommandArgument;
 import ch.zhaw.it.pm1.nullpointerexception.texteditor.command.furtherinput.FurtherInput;
@@ -13,7 +18,7 @@ import java.util.List;
  * Represents the Add Command.
  */
 public class Add extends Command {
-    protected final FurtherInput<String> contentToAdd = new StringFurtherInput("Enter text for new paragraph:") {
+    private final FurtherInput<String> contentToAdd = new StringFurtherInput("Enter text for new paragraph:") {
         @Override
         public String processInput(String input) {
             return StringValidator.filterInvalidCharacters(input);

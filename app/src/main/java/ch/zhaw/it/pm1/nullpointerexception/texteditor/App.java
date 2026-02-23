@@ -65,10 +65,9 @@ public class App {
     }
 
     private void handleFurtherInput(Command command) {
-        for (
-                Optional<FurtherInput<?>> nextInput = command.getNextFurtherInput();
-                nextInput.isPresent();
-                nextInput = command.getNextFurtherInput()
+        for (Optional<FurtherInput<?>> nextInput = command.getNextFurtherInput();
+             nextInput.isPresent();
+             nextInput = command.getNextFurtherInput()
         ) {
             logger.fine("Handling further input: " + nextInput.get());
 

@@ -15,7 +15,7 @@ import java.util.List;
  * Triggers output of the current text in the active format.
  */
 public class Print extends Command {
-    protected String formattedOutput;
+    private String formattedOutput;
 
     /**
      * Creates a new Print Command instance.

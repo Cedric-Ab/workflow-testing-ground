@@ -4,7 +4,13 @@ import ch.zhaw.it.pm1.nullpointerexception.texteditor.InvalidInputException;
 import ch.zhaw.it.pm1.nullpointerexception.texteditor.Text;
 import ch.zhaw.it.pm1.nullpointerexception.texteditor.TextFormatter;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -67,10 +73,10 @@ public class CommandParser {
      * @throws InvalidInputException when a matching command couldn't be found or additional input is invalid
      */
     public Command getCommand(String input) throws InvalidInputException {
-        input = Objects.requireNonNull(input, "input must not be null").trim();
+        String cleanedInput = Objects.requireNonNull(input, "input must not be null").trim();
 
         for (String commandKey : COMMAND_FACTORIES.sequencedKeySet()) {
-            Matcher matcher = getCommandRegex(commandKey).matcher(input);
+            Matcher matcher = getCommandRegex(commandKey).matcher(cleanedInput);
             if (matcher.matches()) {
                 String remainingInput = matcher.group(2).trim();
 

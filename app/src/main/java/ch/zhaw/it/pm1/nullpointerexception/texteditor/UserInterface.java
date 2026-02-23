@@ -19,7 +19,7 @@ public class UserInterface {
     }
 
     /**
-     * Reads a console input line
+     * Reads a console input line.
      *
      * @return input line
      */
@@ -30,7 +30,7 @@ public class UserInterface {
     }
 
     /**
-     * Prints the passed string into the console, so it's visible for the user
+     * Prints the passed string into the console, so it's visible for the user.
      *
      * @param output string to show in the console
      */

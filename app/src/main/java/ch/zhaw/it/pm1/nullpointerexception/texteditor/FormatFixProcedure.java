@@ -53,11 +53,11 @@ public record FormatFixProcedure(int maxWidth) implements FormatStrategy {
         return String.join("\n", lines);
     }
 
-    private boolean doesLineFit(String line, int maxWidth) {
+    private static boolean doesLineFit(String line, int maxWidth) {
         return (line.stripTrailing().length() <= maxWidth);
     }
 
-    private int findBreakPosition(String text, int maxWidth) {
+    private static int findBreakPosition(String text, int maxWidth) {
         if (doesLineFit(text, maxWidth)) {
             return text.length();
         }

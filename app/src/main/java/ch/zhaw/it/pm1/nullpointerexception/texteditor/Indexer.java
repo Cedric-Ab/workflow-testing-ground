@@ -1,6 +1,11 @@
 package ch.zhaw.it.pm1.nullpointerexception.texteditor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -96,14 +101,13 @@ public final class Indexer {
      */
     // package-private for testing
     static String trimWord(String word) {
-        Objects.requireNonNull(word, "word must not be null");
+        String trimmedWord = Objects.requireNonNull(word, "word must not be null").trim();
 
-        word = word.trim();
-
-        while (!word.isEmpty() && !VALID_ENDING_CHARACTERS.contains(String.valueOf(word.charAt(word.length() - 1)))) {
-            word = word.substring(0, word.length() - 1);
+        while (!trimmedWord.isEmpty()
+                && !VALID_ENDING_CHARACTERS.contains(String.valueOf(trimmedWord.charAt(trimmedWord.length() - 1)))) {
+            trimmedWord = trimmedWord.substring(0, trimmedWord.length() - 1);
         }
-        return word;
+        return trimmedWord;
     }
 
     /**

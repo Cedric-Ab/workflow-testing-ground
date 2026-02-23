@@ -6,6 +6,7 @@ import ch.zhaw.it.pm1.nullpointerexception.texteditor.TextFormatter;
 import ch.zhaw.it.pm1.nullpointerexception.texteditor.command.furtherinput.FurtherInput;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Represents the Dummy Command used for testing.
@@ -75,7 +76,14 @@ public class Dummy extends Add {
     @Override
     public void executeCommand() {
         try {
-            contentToAdd.resolve(DUMMY_TEXT);
+            Optional<FurtherInput<?>> optionalFurtherInput = super.getAllFurtherInputs().stream().findFirst();
+
+            if (optionalFurtherInput.isEmpty()) {
+                logger.severe("No Further Input found for Dummy Command.");
+                return;
+            }
+
+            optionalFurtherInput.get().resolve(DUMMY_TEXT);
             super.executeCommand();
         } catch (InvalidInputException e) {
             logger.severe("Sending DUMMY_TEXT to Add Command failed with " + e);

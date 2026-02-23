@@ -31,8 +31,6 @@
         <module name="MethodName"/>
         <module name="LocalVariableName"/>
         <module name="MemberName"/>
-        <module name="ConstantName"/>
-
 
         <!-- === FORMATTING RULES === -->
 
@@ -48,19 +46,20 @@
         <module name="NoWhitespaceBefore"/>
         <module name="GenericWhitespace"/>
 
-        <module name="OperatorWrap"/>
+        <module name="OperatorWrap">
+            <property name="option" value="eol"/>
+        </module>
 
         <module name="ParenPad"/>
         <module name="MethodParamPad"/>
-        <module name="EmptyForInitializerPad "/>
-        <module name="MethodParamPad"/>
+        <module name="EmptyForInitializerPad"/>
         <module name="ArrayTypeStyle"/>
 
 
         <!-- IntelliJ-style import order -->
         <module name="ImportOrder">
             <property name="option" value="bottom"/> <!-- static imports after normal imports -->
-            <property name="groups" value="java, javax, org, com, ch.zhaw"/>
+            <property name="groups" value="ch.zhaw, javax, java, *"/>
             <property name="ordered" value="true"/>  <!-- alphabetical inside groups -->
             <property name="separated" value="true"/> <!-- blank line between groups -->
             <property name="sortStaticImportsAlphabetically" value="true"/>
@@ -84,9 +83,8 @@
             <property name="option" value="eol"/>
         </module>
         <module name="RightCurly">
-            <property name="option" value="alone"/>
+            <property name="option" value="same"/>
         </module>
-        <module name="EmptyStatement"/>
 
         <!-- === CLASS LAYOUT CHECKS === -->
         <module name="OneTopLevelClass"/>
@@ -118,7 +116,7 @@
         </module>
 
         <module name="MagicNumber">
-            <property name="ignoreNumbers" value="-1,0,1"/>
+            <property name="ignoreNumbers" value="-1,0,1,2,10"/>
             <property name="ignoreHashCodeMethod" value="true"/>
             <property name="ignoreFieldDeclaration" value="true"/>
             <property name="ignoreAnnotation" value="true"/>
