@@ -32,8 +32,7 @@ java {
 }
 
 application {
-    // Define the main class for the application.
-    mainClass = "org.example.App"
+    mainClass = "ch.zhaw.it.pm1.nullpointerexception.texteditor.StartUp"
 }
 
 checkstyle {
