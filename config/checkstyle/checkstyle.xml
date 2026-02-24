@@ -11,6 +11,7 @@
     <!-- Files to check -->
     <property name="fileExtensions" value="java"/>
 
+    <module name="SuppressWithPlainTextCommentFilter"/>
 
     <!-- === GENEREAL FORMATTING RULES === -->
 
@@ -31,6 +32,7 @@
         <module name="MethodName"/>
         <module name="LocalVariableName"/>
         <module name="MemberName"/>
+        <module name="ConstantName"/>
 
         <!-- === FORMATTING RULES === -->
 
