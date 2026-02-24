@@ -34,7 +34,8 @@ public class StartUp {
             // Replace FileHandler pattern with a timestamped filename
             String timestamp = java.time.LocalDateTime.now()
                     .format(java.time.format.DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-            props.setProperty("java.util.logging.FileHandler.pattern", logDirectory + "/texteditor_" + timestamp + ".log");
+            props.setProperty("java.util.logging.FileHandler.pattern",
+                    logDirectory + "/texteditor_" + timestamp + ".log");
 
             // Convert back to InputStream and load into LogManager
             java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();

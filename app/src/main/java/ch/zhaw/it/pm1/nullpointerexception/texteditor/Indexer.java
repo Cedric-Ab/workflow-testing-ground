@@ -14,7 +14,8 @@ import java.util.stream.Collectors;
  */
 public final class Indexer {
     public static final String VALID_STARTING_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZÄÖÜ";
-    public static final String VALID_ENDING_CHARACTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöüÄÖÜ0123456789";
+    public static final String VALID_ENDING_CHARACTERS =
+            "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöüÄÖÜ0123456789";
     public static final int INDEX_DIRECTORY_MIN_WORD_COUNT = 4;
     private static final Logger logger = Logger.getLogger(Indexer.class.getName());
 
@@ -26,6 +27,7 @@ public final class Indexer {
     /**
      * Builds and returns an index directory over all paragraphs.
      *
+     * @param text the text to build the index directory for
      * @return Index directory of the entire text
      */
     public static Map<String, Set<Integer>> getIndexDirectory(Text text) {
@@ -103,8 +105,8 @@ public final class Indexer {
     static String trimWord(String word) {
         String trimmedWord = Objects.requireNonNull(word, "word must not be null").trim();
 
-        while (!trimmedWord.isEmpty()
-                && !VALID_ENDING_CHARACTERS.contains(String.valueOf(trimmedWord.charAt(trimmedWord.length() - 1)))) {
+        while (!trimmedWord.isEmpty() &&
+                !VALID_ENDING_CHARACTERS.contains(String.valueOf(trimmedWord.charAt(trimmedWord.length() - 1)))) {
             trimmedWord = trimmedWord.substring(0, trimmedWord.length() - 1);
         }
         return trimmedWord;

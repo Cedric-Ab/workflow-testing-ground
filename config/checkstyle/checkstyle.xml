@@ -11,8 +11,6 @@
     <!-- Files to check -->
     <property name="fileExtensions" value="java"/>
 
-    <module name="SuppressWithPlainTextCommentFilter"/>
-
     <!-- === GENEREAL FORMATTING RULES === -->
 
     <!-- Prevent long unbroken lines (set your desired max) -->
@@ -26,13 +24,17 @@
 
     <!-- Checks which need knowledge of java syntax -->
     <module name="TreeWalker">
+        <module name="SuppressionCommentFilter"/>
+        <module name="SuppressWithNearbyCommentFilter"/>
 
         <!-- === NAMING === -->
         <module name="TypeName"/>
         <module name="MethodName"/>
         <module name="LocalVariableName"/>
         <module name="MemberName"/>
-        <module name="ConstantName"/>
+        <module name="ConstantName">
+            <property name="format" value="^log(ger)?$|^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"/>
+        </module>
 
         <!-- === FORMATTING RULES === -->
 

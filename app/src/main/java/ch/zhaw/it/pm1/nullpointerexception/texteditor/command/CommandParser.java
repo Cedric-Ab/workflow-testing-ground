@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 public class CommandParser {
     public static final SortedMap<String, CommandFactory> COMMAND_FACTORIES;
     private static final Logger logger = Logger.getLogger(CommandParser.class.getName());
-    private static final Map<String, Pattern> commandRegexCache = new HashMap<>();
+    private static final Map<String, Pattern> commandRegexCache = new HashMap<>(); // SUPPRESS CHECKSTYLE ConstantName
 
     static {
         SortedMap<String, CommandFactory> modifiableCommands = new TreeMap<>(

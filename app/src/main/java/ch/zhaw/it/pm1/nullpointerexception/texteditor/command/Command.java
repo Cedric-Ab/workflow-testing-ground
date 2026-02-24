@@ -36,7 +36,8 @@ public abstract class Command {
      * @param textFormatter   the text formatter to be used for formatting the text
      * @throws InvalidInputException if the additional input is invalid
      */
-    public Command(String arguments, CommandArgument<?> commandArgument, Text text, TextFormatter textFormatter) throws InvalidInputException {
+    public Command(String arguments, CommandArgument<?> commandArgument,
+                   Text text, TextFormatter textFormatter) throws InvalidInputException {
         this.text = Objects.requireNonNull(text, "text must not be null");
         this.textFormatter = Objects.requireNonNull(textFormatter, "textFormatter must not be null");
         this.argument = Objects.requireNonNull(commandArgument, "arguments must not be null");

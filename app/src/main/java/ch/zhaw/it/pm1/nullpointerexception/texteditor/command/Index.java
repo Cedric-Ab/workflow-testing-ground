@@ -18,7 +18,9 @@ import java.util.stream.Collectors;
  * Represents the Index Command.
  */
 public class Index extends Command {
-    String indexDirectoryAsString = null;
+    private static final int PADDING_WIDTH = 3;
+
+    private String indexDirectoryAsString = null;
 
     /**
      * Creates a new Index Command instance.
@@ -57,7 +59,7 @@ public class Index extends Command {
         int wordDisplayWidth = indexDirectory.keySet().stream()
                 .mapToInt(String::length)
                 .max()
-                .orElse(0) + 3;
+                .orElse(0) + PADDING_WIDTH;
 
         indexDirectoryAsString = indexDirectory.keySet().stream()
                 .sorted()
